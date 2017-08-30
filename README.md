@@ -4,7 +4,7 @@ Java workshop with Pivotal Cloud Foundry and Spring Cloud Services (SCS)
 
 ## Instructors
 - Parag Doshi, Platform Architect, pdoshi@pivotal.io
-- David Dieruf, Platform Architect, ddieruf@pivotal.io
+- Ralph Meira, Platform Architect, rmeira@pivotal.io
 
 ## Agenda
 
@@ -26,9 +26,7 @@ Time | Session
 3:15 PM - 3:30 PM | _Break_
 3:30 PM - 4:00 PM | Lab 6: _Fault Tolerant Design with Spring Cloud Services - Hystrix_
 4:00 PM - 4:15 PM | _Labs Review_
-4:15 PM - 4:45 PM | Session 3: Continuous Integration/Continuous Delivery with PCF
-4:45 PM - 5:00 PM | Demo: _CI/CD pipeline with Jenkins and PCF_
-5:00 PM - 5:30 PM | Wrap-Up & Q&A - Lessons Learnt - what doesn't work.
+
 
 This is a _loose_ schedule for the day. We will adjust as necessary based on our pace through the material.
 
@@ -37,16 +35,15 @@ This is a _loose_ schedule for the day. We will adjust as necessary based on our
 Start by downloading the course materials.  This can be accomplished either through the GitHub website or if you have Git installed, use the following commands:
 
 ```
-$ git clone https://github.com/git-paragdoshi/PCFJavaWorkshop-WithSCS
-$ cd PCFJavaWorkshop-WithSCS/
-$ git fetch --all
+$ git clone https://github.com/git-paragdoshi/PCF-SCS-Workshop
+
 ```
 
 **Prerequisites**
 - [Cloud Foundry CLI](https://github.com/cloudfoundry/cli)
 - [Git Client](https://git-scm.com/downloads)
-- [Intellij Version 2016.1 or later](https://https://www.jetbrains.com/idea/download/)
-- PWS account registration complete at http://run.pivotal.io
+- [Eclipse IDE](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/oxygenr/)
+
 
 ## Course Materials
 
@@ -64,5 +61,3 @@ $ git fetch --all
   - [Lab 6 - Fault Tolerant Design with Spring Cloud Services - Hystrix](session_02/lab_06/lab06.adoc)
   - Lab Review - Spring Cloud Services - Discussion
 
-#### Session 3 [(Slides)](session_03/Session_3_Continuous_Integration_Delivery.pdf): _Continuous Integration/Continuous Delivery with PCF_
-  - Demo - CI/CD pipeline with Jenkins and PCF
