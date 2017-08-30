@@ -11,6 +11,8 @@ Day One:
 Time | Session
 ---- | -------
 
+---
+
 3:00 PM - 3:15 PM | Lab 0: _Accessing the Workshop Environment_
 3:15 PM - 3:30 PM | Lab 1: _Pushing Your First Application_
 3:30 PM - 4:00 PM | Lab 2: _Scaling, Auto Scaling and Zero Downtime Deployment Lab_
@@ -25,6 +27,7 @@ Day Two:
 3:30 PM - 4:00 PM | Lab 6: _Fault Tolerant Design with Spring Cloud Services - Hystrix_
 4:00 PM - 4:15 PM | _Labs Review_
 
+---
 
 This is a _loose_ schedule for the day. We will adjust as necessary based on our pace through the material.
 
