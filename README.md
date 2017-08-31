@@ -11,17 +11,18 @@ Java workshop with Pivotal Cloud Foundry and Spring Cloud Services (SCS)
 Time | Session
 ---- | -------
 Tuesday: _Intro to Pivotal Cloud Foundry_
-3:00 AM - 3:10 PM | Lab 0: _Accessing the Workshop Environment_
-3:10 AM - 3:30 AM | Lab 1: _Pushing Your First Application_
-3:30 AM - 4:00 AM | Lab 2: _Scaling, Auto Scaling and Zero Downtime Deployment Lab_
+3:00 PM - 3:10 PM | Lab 0: _Accessing the Workshop Environment_
+3:10 PM - 3:30 PM | Lab 1: _Pushing Your First Application_
+3:30 PM - 4:00 PM | Lab 2: _Scaling, Auto Scaling and Zero Downtime Deployment Lab_
 4:00 PM - 4:30 PM | Lab 3: _Monitoring, Metrics and HA Lab_
 4:30  PM - 4:45 PM  | _Labs Review_ & Q&A
 Wednesday:
-1:30 PM - 2:00 PM | Session 2: _Cloud Native Design and Microservices with Spring Cloud Services_
-2:00 PM - 2:30 PM | Lab 4: _Dynamic Configuration Loading with Spring Cloud Services - Config Server_
-2:30 PM - 3:15 PM | Lab 5: _MicroServices Registration and Discovery with Spring Cloud Services - Eureka_
-3:30 PM - 4:00 PM | Lab 6: _Fault Tolerant Design with Spring Cloud Services - Hystrix_
-5:00 PM - 5:30 PM | _Labs Review_ & Q&A.
+9:10 AM - 9:30 AM | Session 2: _Cloud Native Design and Microservices with Spring Cloud Services_
+9:30 AM - 10:00 AM | Lab 4: _Dynamic Configuration Loading with Spring Cloud Services - Config Server_
+10:00 AM - 10.15 AM | _Break_
+10:15 AM - 11:00 AM | Lab 5: _MicroServices Registration and Discovery with Spring Cloud Services - Eureka_
+11:00 AM - 11:45 AM | Lab 6: _Fault Tolerant Design with Spring Cloud Services - Hystrix_
+11:45 AM - 12:00 PM | _Labs Review_ & Q&A.
 
 This is a _loose_ schedule for the day. We will adjust as necessary based on our pace through the material.
 
