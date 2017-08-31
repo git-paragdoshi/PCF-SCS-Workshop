@@ -16,7 +16,7 @@ Tuesday: _Intro to Pivotal Cloud Foundry_
 3:30 PM - 4:00 PM | Lab 2: _Scaling, Auto Scaling and Zero Downtime Deployment Lab_
 4:00 PM - 4:30 PM | Lab 3: _Monitoring, Metrics and HA Lab_
 4:30  PM - 4:45 PM  | _Labs Review_ & Q&A
-Wednesday:
+Wednesday: _Intro to Spring Cloud Services_
 9:10 AM - 9:30 AM | Session 2: _Cloud Native Design and Microservices with Spring Cloud Services_
 9:30 AM - 10:00 AM | Lab 4: _Dynamic Configuration Loading with Spring Cloud Services - Config Server_
 10:00 AM - 10.15 AM | _Break_
