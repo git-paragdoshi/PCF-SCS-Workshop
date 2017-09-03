@@ -12,7 +12,7 @@ In the next two labs we'll explore Pivotal Cloud Foundry operations.
 +
 ----
 > cf scale paragdoshi-articulate -i 3
-Scaling app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Scaling app paragdoshi-articulate in org training / space training as parag...
 OK
 
 ----
@@ -24,21 +24,22 @@ In reporting `OK`, the CLI is letting you know that the additional requested ins
 ====
 ----
 > cf app paragdoshi-articulate
-Showing health and status for app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
-OK
+Showing health and status for app paragdoshi-articulate in org training / space training as parag...
 
-requested state: started
-instances: 3/3
-usage: 1G x 3 instances
-urls: paragdoshi-articulate.cfapps.io
-last uploaded: Mon Apr 3 17:02:55 UTC 2017
-stack: cflinuxfs2
-buildpack: container-certificate-trust-store=2.0.0_RELEASE java-buildpack=v3.14-offline-https://github.com/cloudfoundry/java-buildpack.git#d5d58c6 java-main open-jdk-like-jre=1.8.0_121 open-jdk-like-memory-calculator=2.0.2_RELEASE spring-auto-reconfiguration=1.10...
+name:              paragdoshi-articulate
+requested state:   started
+instances:         3/3
+usage:             1G x 3 instances
+routes:            paragdoshi-articulate.apps.ourpcf.com
+last uploaded:     Sun 03 Sep 23:00:45 GMT 2017
+stack:             cflinuxfs2
+buildpack:         container-security-provider=1.5.0_RELEASE java-buildpack=v3.18-offline-https://github.com/cloudfoundry/java-buildpack.git#841ecb2 java-main
+                   open-jdk-like-jre=1.8.0_131 open-jdk-like-memory-calculator=2.0.2_RELEASE open-jdk-like-security-providers secur...
 
-     state     since                    cpu      memory         disk           details
-#0   running   2017-04-03 01:04:52 PM   0.1%     442.9M of 1G   154.6M of 1G
-#1   running   2017-04-03 02:46:56 PM   212.4%   459.9M of 1G   154.6M of 1G
-#2   running   2017-04-03 02:46:52 PM   1.4%     434.5M of 1G   154.6M of 1G
+     state     since                  cpu      memory         disk           details
+#0   running   2017-09-03T23:01:23Z   0.2%     480.6M of 1G   154.6M of 1G
+#1   running   2017-09-03T23:36:59Z   188.9%   439.4M of 1G   154.6M of 1G
+#2   running   2017-09-03T23:36:59Z   167.0%   435.6M of 1G   154.6M of 1G
 >
 ----
 ====
@@ -61,7 +62,7 @@ This makes for very dynamic and rapid reconfiguration!
 +
 ----
 > cf scale paragdoshi-articulate -i 1
-Scaling app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Scaling app paragdoshi-articulate in org training / space training as parag...
 OK
 
 ----
@@ -70,20 +71,20 @@ OK
 +
 ----
 > cf app paragdoshi-articulate
-Showing health and status for app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
-OK
+Showing health and status for app paragdoshi-articulate in org training / space training as parag...
 
-requested state: started
-instances: 1/1
-usage: 1G x 1 instances
-urls: paragdoshi-articulate.cfapps.io
-last uploaded: Mon Apr 3 17:02:55 UTC 2017
-stack: cflinuxfs2
-buildpack: container-certificate-trust-store=2.0.0_RELEASE java-buildpack=v3.14-offline-https://github.com/cloudfoundry/java-buildpack.git#d5d58c6 java-main open-jdk-like-jre=1.8.0_121 open-jdk-like-memory-calculator=2.0.2_RELEASE spring-auto-reconfiguration=1.10...
+name:              paragdoshi-articulate
+requested state:   started
+instances:         1/1
+usage:             1G x 1 instances
+routes:            paragdoshi-articulate.apps.ourpcf.com
+last uploaded:     Sun 03 Sep 23:00:45 GMT 2017
+stack:             cflinuxfs2
+buildpack:         container-security-provider=1.5.0_RELEASE java-buildpack=v3.18-offline-https://github.com/cloudfoundry/java-buildpack.git#841ecb2 java-main
+                   open-jdk-like-jre=1.8.0_131 open-jdk-like-memory-calculator=2.0.2_RELEASE open-jdk-like-security-providers secur...
 
-     state     since                    cpu    memory         disk           details
-#0   running   2017-04-03 01:04:52 PM   0.3%   448.1M of 1G   154.6M of 1G
-
+     state     since                  cpu    memory         disk           details
+#0   running   2017-09-03T23:01:23Z   0.1%   480.6M of 1G   154.6M of 1G
 ----
 +
 As you can see, we're back down to only one instance running, and it is in fact the original index 0 that we started with.
