@@ -7,7 +7,7 @@
 . From a command prompt, set the API target for the CLI: (set appropriate end point for your environment)
 +
 ----
-> cf api https://api.run.pivotal.io
+> cf api  https://api.system.ourpcf.com
 ----
 
 . Log In to Pivotal Cloud Foundry:
@@ -21,31 +21,31 @@ Follow the prompts, entering the username (email address) and password that you 
 ====
 ----
 > cf login
-API endpoint: https://api.run.pivotal.io
+API endpoint: https://api.system.ourpcf.com
 
-Email> pdoshi@pivotal.io
+Email> parag
 
 Password>
 Authenticating...
 OK
 
-Targeted org PapaJohns
+Targeted org training
 
-Targeted space workshop
+Targeted space training
 
 
 
-API endpoint:   https://api.run.pivotal.io (API version: 2.75.0)
-User:           pdoshi@pivotal.io
-Org:            PapaJohns
-Space:          workshop
+API endpoint:   https://api.system.ourpcf.com (API version: 2.82.0)
+User:           parag
+Org:            training
+Space:          training
 
 ----
 ====
 
 == AppsManager Log In
 
-. Log In to Apps Manager URL: http://run.pivotal.io. Click on the 'LOG IN'link in the upper right corner. Use the same username and password you entered when using the CF CLI
+. Log In to Apps Manager URL: https://apps.system.ourpcf.com. Click on the 'LOG IN'link in the upper right corner. Use the same username and password you entered when using the CF CLI
 +
 image::../../Common/images/lab-student-login.png[]  
 
