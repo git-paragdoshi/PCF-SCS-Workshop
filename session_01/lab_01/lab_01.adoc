@@ -39,13 +39,13 @@ For example, below is the name value changes in my manifest.yml file. Remember t
 . If you haven't already, set the API target for the CLI: (set appropriate end point for your environment)
 +
 ----
-> cf api https://api.run.pivotal.io
+> cf api https://api.system.ourpcf.com
 
-Setting api endpoint to https://api.run.pivotal.io...
+Setting api endpoint to https://api.system.ourpcf.com...
 OK
 
-API endpoint:   https://api.run.pivotal.io
-API version:    2.75.0
+api endpoint:   https://api.system.ourpcf.com
+api version:    2.82.0
 ----
 and login to Pivotal Cloudfoundry:
 +
@@ -68,26 +68,26 @@ You should see output similar to the following listing. Take a look at the listi
 ====
 ----
 > cf push
-Using manifest file /PCFJavaWorkshop-WithSCS/deployables/articulate/manifest.yml
+Using manifest file C:\Users\Administrator\Desktop\apps\PCF-SCS-Workshop\deployables\articulate\manifest.yml
 
 Using stack cflinuxfs2...
 OK
-Creating app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Creating app paragdoshi-articulate in org training / space training as parag...
 OK
 
-Creating route paragdoshi-articulate.cfapps.io...
+Creating route paragdoshi-articulate.apps.ourpcf.com...
 OK
 
-Binding paragdoshi-articulate.cfapps.io to paragdoshi-articulate...
+Binding paragdoshi-articulate.apps.ourpcf.com to paragdoshi-articulate...
 OK
 
 Uploading paragdoshi-articulate...
-Uploading app files from: /var/folders/1w/mpbw8_5s2_j491wwnlcc7vv40000gn/T/unzipped-app032543917
-Uploading 551.5K, 139 files
-Done uploading               
+Uploading app files from: C:\Users\ADMINI~1\AppData\Local\Temp\2\unzipped-app291012759
+Uploading 26M, 188 files
+Done uploading
 OK
 
-Starting app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Starting app paragdoshi-articulate in org training / space training as parag...
 Downloading binary_buildpack...
 Downloading staticfile_buildpack...
 Downloading java_buildpack...
