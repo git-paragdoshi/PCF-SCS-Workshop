@@ -7,15 +7,15 @@ In this lab we will push a Java Spring Boot web application to cloud foundry.
 
 == Download git repo (if not done already)
 
-. Download and clone the git repo, if you have the command line tool installed, or you can click 'Download ZIP' on the right side of the page https://github.com/git-paragdoshi/PCFJavaWorkshop-WithSCS
+. Download and clone the git repo, if you have the command line tool installed, or you can click 'Download ZIP' on the right side of the page https://github.com/git-paragdoshi/PCF-SCS-Workshop
 +
 ----
-> git clone https://github.com/git-paragdoshi/PCFJavaWorkshop-WithSCS
+> git clone https://github.com/git-paragdoshi/PCF-SCS-Workshop
 ----
 
 == Navigate to the application directory
 
-. Open a command prompt in Windows (or Terminal on Mac) Navigate to /PCFJavaWorkshop-WithSCS/deployables/articulate directory
+. Open a command prompt in Windows (or Terminal on Mac) Navigate to /PCF-SCS-Workshop/deployables/articulate directory
 . Open the manifest.yml file in your text editor and update the username to your unique username so that we can differentiate your app from other workshop attendee's app.
 For example, below is the name value changes in my manifest.yml file. Remember to preserve the space after _name:_
  
@@ -57,7 +57,7 @@ Follow the prompts.
 
 == Push It!
 
-. Push the application from */PCFJavaWorkshop-WithSCS/deployables/articulate* directory!
+. Push the application from */PCF-SCS-Workshop/deployables/articulate* directory!
 +
 ----
 > cf push
@@ -113,24 +113,71 @@ Successfully created container
 Downloading app package...
 Downloaded app package (27.6M)
 -----> Java Buildpack Version: v3.14 (offline) | https://github.com/cloudfoundry/java-buildpack.git#d5d58c6
------> Downloading Open Jdk JRE 1.8.0_121 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_121.tar.gz (found in cache)
-       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.1s)
------> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
-       Memory Settings: -Xss349K -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xms681574K -XX:MetaspaceSize=104857K
------> Downloading Container Certificate Trust Store 2.0.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-certificate-trust-store/container-certificate-trust-store-2.0.0_RELEASE.jar (found in cache)
-       Adding certificates to .java-buildpack/container_certificate_trust_store/truststore.jks (0.4s)
------> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
-Exit status 0
+Using manifest file C:\Users\Administrator\Desktop\apps\PCF-SCS-Workshop\deployables\articulate\manifest.yml
+
+Using stack cflinuxfs2...
+OK
+Creating app paragdoshi-articulate in org training / space training as parag...
+OK
+
+Creating route paragdoshi-articulate.apps.ourpcf.com...
+OK
+
+Binding paragdoshi-articulate.apps.ourpcf.com to paragdoshi-articulate...
+OK
+
+Uploading paragdoshi-articulate...
+Uploading app files from: C:\Users\ADMINI~1\AppData\Local\Temp\2\unzipped-app291012759
+Uploading 26M, 188 files
+Done uploading
+OK
+
+Starting app paragdoshi-articulate in org training / space training as parag...
+Downloading binary_buildpack...
+Downloading nodejs_buildpack...
+Downloading ruby_buildpack...
+Downloading php_buildpack...
+Downloading python_buildpack...
+Downloaded nodejs_buildpack
+Downloading go_buildpack...
+Downloaded python_buildpack
+Downloading dotnet_core_buildpack...
+Downloaded php_buildpack
+Downloading staticfile_buildpack...
+Downloaded go_buildpack
+Downloaded ruby_buildpack
+Downloading java_buildpack_offline...
+Downloaded binary_buildpack
+Downloaded dotnet_core_buildpack
+Downloaded staticfile_buildpack
+Downloaded java_buildpack_offline
+Creating container
+Successfully created container
+Downloading app package...
+Downloaded app package (27.6M)
+Staging...
+-----> Java Buildpack Version: v3.18 (offline) | https://github.com/cloudfoundry/java-buildpack.git#841ecb2
+-----> Downloading Open Jdk JRE 1.8.0_131 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_131.tar.gz (found in cache)
+-----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.g
+z (found in cache)
+       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.0s)
+       Memory Settings: -Xms681574K -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xss349K -XX:MetaspaceSize=104857K
+-----> Downloading Container Security Provider 1.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-security-provider/container-security-provider-1.5.0_RELEASE.jar
+ (found in cache)
+-----> Downloading Spring Auto Reconfiguration 1.11.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.11.0_RELEASE.jar (found in c
+ache)
 Uploading droplet, build artifacts cache...
+Exit status 0
+Staging complete
 Uploading build artifacts cache...
 Uploading droplet...
-Uploaded build artifacts cache (109B)
-Uploaded droplet (73M)
+Uploaded build artifacts cache (129B)
+Uploaded droplet (73.1M)
 Uploading complete
+Stopping instance ac27df7f-005a-4923-865b-ef5c6095e867
 Destroying container
 Successfully destroyed container
 
-0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
 1 of 1 instances running
@@ -140,22 +187,26 @@ App started
 
 OK
 
-App paragdoshi-articulate was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Djavax.net.ssl.trustStore=$PWD/.java-buildpack/container_certificate_trust_store/truststore.jks -Djavax.net.ssl.trustStorePassword=java-buildpack-trust-store-password" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
+App paragdoshi-articulate was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=met
+aspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS=
+"-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Djava.ext.dirs=$PWD/.java-buildpack/container_security_provi
+der:$PWD/.java-buildpack/open_jdk_jre/lib/ext -Djava.security.properties=$PWD/.java-buildpack/security_providers/java.security" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack
+/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
 
-Showing health and status for app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Showing health and status for app paragdoshi-articulate in org training / space training as parag...
 OK
 
 requested state: started
 instances: 1/1
 usage: 1G x 1 instances
-urls: paragdoshi-articulate.cfapps.io
-last uploaded: Mon Apr 3 15:42:59 UTC 2017
+urls: paragdoshi-articulate.apps.ourpcf.com
+last uploaded: Sun Sep 3 23:00:45 UTC 2017
 stack: cflinuxfs2
-buildpack: container-certificate-trust-store=2.0.0_RELEASE java-buildpack=v3.14-offline-https://github.com/cloudfoundry/java-buildpack.git#d5d58c6 java-main open-jdk-like-jre=1.8.0_121 open-jdk-like-memory-calculator=2.0.2_RELEASE spring-auto-reconfiguration=1.10...
+buildpack: container-security-provider=1.5.0_RELEASE java-buildpack=v3.18-offline-https://github.com/cloudfoundry/java-buildpack.git#841ecb2 java-main open-jdk-like-jre=1.8.0_131
+open-jdk-like-memory-calculator=2.0.2_RELEASE open-jdk-like-security-providers secur...
 
-     state     since                    cpu    memory         disk           details
-#0   running   2017-04-03 11:43:56 AM   0.0%   420.4M of 1G   154.6M of 1G
-
+     state     since                    cpu    memory       disk           details
+#0   running   2017-09-03 11:01:23 PM   0.0%   1.7M of 1G   154.6M of 1G
 
 ----
 <1> The CLI is using a manifest to provide necessary configuration details such as application name, memory to be allocated, the stack to be used (in this case cflinuxfs2), the number of instances requested to start, and path to the application artifact.
