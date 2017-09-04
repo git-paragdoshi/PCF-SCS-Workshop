@@ -50,7 +50,7 @@ Servlet 'dispatcherServlet'
 ----
 <1> An ``Apache-style'' access log event from the (Go)Router
 <2> An API log event that corresponds to an event as shown in `cf events`
-<3> A CELL log event indicating the start of an application instance on that CELL.
+<3> A RTR log event indicating the routing of a request to an application instance.
 ====
 
 As you can see, Cloud Foundry's log aggregation components capture both application logs and CF component logs relevant to your application.
@@ -72,7 +72,7 @@ Cloud Foundry's https://docs.pivotal.io/pivotalcf/1-9/concepts/architecture/#nsy
 +
 ----
 > cf logs paragdoshi-articulate
-Connected, tailing logs for app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Retrieving logs for app paragdoshi-articulate in org training / space training as parag...
 ----
 
 . If you do not have more than one application instance running, execute the scale command to scale to 2 or more application instances.  Visit the application in the browser, click on 'Scale & HA' link and click on the `Kill' button. This button will trigger an Environment.Exit(-1) causing the Health Manager to observe an application instance crash:
