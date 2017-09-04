@@ -29,15 +29,22 @@ Here are some interesting subsets of one output from that command:
 ====
 ----
 > cf logs paragdoshi-articulate --recent
-Connected, dumping recent logs for app paragdoshi-articulate in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Retrieving logs for app paragdoshi-articulate in org training / space training as parag...
 
-2017-04-03T13:04:50.21-0400 [APP/PROC/WEB/0]OUT 2017-04-03 17:04:50.212  INFO 14 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2017-04-03T13:04:50.21-0400 [APP/PROC/WEB/0]OUT 2017-04-03 17:04:50.215  INFO 14 --- [           main] i.p.e.articulate.ArticulateApplication   : Started ArticulateApplication in 11.981 seconds (JVM running for 13.001)
-2017-04-03T13:04:52.25-0400 [CELL/0]     OUT Container became healthy
-2017-04-03T13:13:03.62-0400 [APP/PROC/WEB/0]OUT 2017-04-03 17:13:03.628  INFO 14 --- [nio-8080-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2017-04-03T13:13:03.62-0400 [APP/PROC/WEB/0]OUT 2017-04-03 17:13:03.628  INFO 14 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2017-04-03T13:13:03.66-0400 [APP/PROC/WEB/0]OUT 2017-04-03 17:13:03.668  INFO 14 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 40 ms
-2017-04-03T13:13:04.35-0400 [RTR/5]      OUT paragdoshi-articulate.cfapps.io - [2017-04-03T17:13:03.595+0000] "GET / HTTP/1.1" 200 0 7830 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36" "10.10.2.141:21261" "10.10.148.95:61096" x_forwarded_for:"208.102.173.112" x_forwarded_proto:"https" vcap_request_id:"ebd83dd8-9883-4645-4e1f-dff10e1109c0" response_time:0.759711021 app_id:"8e5b3fd9-272b-41bc-8a5e-b08528e06da0" app_index:"0" x_b3_traceid:"4caa316b231ffbe0" x_b3_spanid:"4caa316b231ffbe0" x_b3_parentspanid:"-"
+   2017-09-04T13:45:01.14+0000 [APP/PROC/WEB/1] OUT 2017-09-04 13:45:01.141  INFO 19 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configu
+rationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=155fd50e,type=Configurat
+ionPropertiesRebinder]
+   2017-09-04T13:45:01.14+0000 [APP/PROC/WEB/1] OUT 2017-09-04 13:45:01.149  INFO 19 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refresh
+Endpoint': registering with JMX server as MBean [org.springframework.cloud.bootstrap.config:name=refreshEndpoint,type=RefreshEndpoint]
+   2017-09-04T13:45:01.19+0000 [APP/PROC/WEB/1] OUT 2017-09-04 13:45:01.195  INFO 19 --- [           main] c.n.h.c.m.e.HystrixMetricsPoller         : Starting HystrixMetricsPoller
+   2017-09-04T13:45:01.19+0000 [APP/PROC/WEB/1] OUT 2017-09-04 13:45:01.197  INFO 19 --- [           main] ration$HystrixMetricsPollerConfiguration : Starting poller
+   2017-09-04T14:14:48.91+0000 [RTR/1] OUT paragdoshi-articulate.apps.ourpcf.com - [2017-09-04T14:14:48.911+0000] "OPTIONS /cloudfoundryapplication HTTP/1.1" 403 0 20 "-" "Mozilla
+/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" "10.161.33.196:54922" "10.161.36.40:61014" x_forwarded_for:"172.31.41
+.185" x_forwarded_proto:"https" vcap_request_id:"70917a49-9284-4a64-5e93-2bfe9c7468c7" response_time:0.002831507 app_id:"44d15f9d-de29-4e53-9898-4b289d0211d7" app_index:"0" x_b3_t
+raceid:"3b19d3bef9797431" x_b3_spanid:"3b19d3bef9797431" x_b3_parentspanid:"-"
+   2017-09-04T14:14:48.91+0000 [RTR/1] OUT
+   2017-09-04T14:14:50.66+0000 [APP/PROC/WEB/1] OUT 2017-09-04 14:14:50.669  INFO 19 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring Framework
+Servlet 'dispatcherServlet'
 
 
 ----
