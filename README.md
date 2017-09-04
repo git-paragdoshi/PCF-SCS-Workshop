@@ -1,10 +1,10 @@
-# PCFJavaWorkshop-WithSCS
+# PCF-SCS-Workshop
 Java workshop with Pivotal Cloud Foundry and Spring Cloud Services (SCS)
 
 
 ## Instructors
-- Parag Doshi, Platform Architect, pdoshi@pivotal.io
-- Ralph Meira, Platform Architect, rmeira@pivotal.io
+- Ralph Meira, Sr. Platform Architect, rmeira@pivotal.io
+- Parag Doshi, Sr. Platform Architect, pdoshi@pivotal.io
 
 ## Agenda
 
