@@ -100,7 +100,7 @@ As you have seen it is pretty easy to scale up or down using the cf CLI or Apps 
 . Navigate to http:///apps.system.ourpcf.com and Log in, if redirected to login screen. 
 . After login, click on the 'Marketplace' link on the left hand menu option as shown in the image below:
 +
-image::../../Common/images/marketplace-link.png[]
+image::../../Common/images/marketplace-menu-link.png[]
 
 . Click on App Autoscaler and you will see a screen similar to the one below. 
 + 
