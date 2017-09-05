@@ -182,4 +182,4 @@ image::../../Common/images/v2-route-traffic.png[]
 
 . Delete the v2 articulate app - Navigate to v2 articulate app and click on 'Settings'. Scroll down to the end of the page and there will be a 'Delete App' button. Click on it, re-confirm the delete and this will delete v2 articulate app.
 
-. Re-add the orgiinal route back to your previous articulate app so that it is again accessible with that route. In my case, the route name was paragdoshi-articulate. Click on the route and make sure your app is accessible again.
+. Re-add the original route back to your previous articulate app so that it is again accessible with that route. In my case, the route name was paragdoshi-articulate. Click on the route and make sure your app is accessible again.
