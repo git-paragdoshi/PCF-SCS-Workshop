@@ -123,7 +123,7 @@ $ cf create-service p-circuit-breaker-dashboard standard pdoshi-circuit-breaker-
 . If we view the Services (accessible from the Apps Manager) you will see that the service is getting initialized:
 
 +
-image::../../Common/images/circuit-breaker-instance-creation.png[]
+image::../../Common/images/hystrix-instance-creation.png[]
 
 
 . After the service is created, if we view the Circuit Breaker Dashboard (accessible from the _manage_ link in Apps Manager) you will see that a dashboard has been deployed but is empty (You may get an _initializing_ message for a few seconds.  This should eventually refresh to a dashboard):
