@@ -142,7 +142,7 @@ ecurity-providers secur...
 . Navigate to your scsapp in a browser and you should see a simple html page output, similar to the one below:
 
 +
-image::../../Common/images/scsapp-index-page.png[]
+image::../../Common/images/eclipse-scsapp-index-page.png[]
 
 == Add ability to read dynamic Value
 
