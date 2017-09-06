@@ -321,7 +321,7 @@ management.security.enabled=false
 
 . Next step is to create the Spring Config Server service instance and bind it to our application. To create the config server instance, navigate to Marketplace in your App Manager and click on 'Config Server' service:
 +
-image::../../Common/images/config-server-marketplace.png[]
+image::../../Common/images/marketplace-config-server.png[]
 
 . In the resulting details page, select the _standard_, single tenant plan.  give it a unique name, select the 'workspace' space that you've been using to push all your applications.  At this time you don't need to select a application to bind to the service:
 +
