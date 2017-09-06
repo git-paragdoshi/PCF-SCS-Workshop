@@ -37,7 +37,7 @@ image::../../Common/images/eclipse-manifest-uniquename.png[]
 
 +
 -----
-pdoshi@Parags-MacBook-Pro:~/Downloads/starter-project/SCSApp$ cf push
+$ cf push
 Using manifest file C:\Users\Administrator\PCF\PCF-SCS-Workshop-master\starter-project\spring-config\SCSApp\SCSApp\manif
 est.yml
 
