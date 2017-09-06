@@ -458,7 +458,7 @@ applications:
   stack: cflinuxfs2
   timeout: 180
   services:
-  - pdoshi-service-registry
+    - pdoshi-service-registry
 -----
 
 
