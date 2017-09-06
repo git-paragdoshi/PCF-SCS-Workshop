@@ -336,7 +336,7 @@ image::../../Common/images/config-server-service-instance.png[]
 . Once the messsage _The Service Instance is Initializing_ disappears click on the service you provisioned.  Select the manage link towards the top of the resulting screen to view the instance id and a JSON document with a single element, count, which validates that the instance provisioned correctly:
 
 +
-image::../../Common/images/config-server-initialized.png[]
+image::../../Common/images/config-server-dashboard.png[]
 
 . We now need to update the service instance with our GIT repository information.  Using the cloudfoundry CLI execute the following update service command:
 +
