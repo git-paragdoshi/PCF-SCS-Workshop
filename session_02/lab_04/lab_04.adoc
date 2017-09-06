@@ -338,11 +338,22 @@ image::../../Common/images/config-server-service-instance.png[]
 +
 image::../../Common/images/config-server-dashboard.png[]
 
-. We now need to update the service instance with our GIT repository information.  Using the cloudfoundry CLI execute the following update service command:
+. We now need to update the service instance with our GIT repository information.  Create a *git-properties.json* in the same folder and paste the following json document in that file:
+
++
+[source, json]
+ {
+    "git": {
+       "uri": "https://github.com/git-paragdoshi/config-repo"
+    }
+ }
+
+
+. Using the cloudfoundry CLI execute the following update service command:
 +
 [source,bash]
 ---------------------------------------------------------------------
-$ cf update-service pdoshi-config-server -c '{"git": { "uri": "https://github.com/git-paragdoshi/config-repo" } }'
+$ cf update-service pdoshi-config-server -c ./git-properties.json
 ---------------------------------------------------------------------
 
 . The command will provide the following update:
@@ -350,26 +361,28 @@ $ cf update-service pdoshi-config-server -c '{"git": { "uri": "https://github.co
 +
 [source,bash]
 ---------------------------------------------------------------------
-Updating service instance pdoshi-config-server as pdoshi@pivotal.io...
+Updating service instance pdoshi-config-server as parag...
 OK
 
 Update in progress. Use 'cf services' or 'cf service pdoshi-config-server' to check operation status.
-pdoshi@Parags-MacBook-Pro:~/start-project/SCSApp$ cf service pdoshi-config-server 
+
+$ cf service pdoshi-config-server 
+
 
 Service instance: pdoshi-config-server
 Service: p-config-server
-Bound apps: 
-Tags: 
+Bound apps:
+Tags:
 Plan: standard
 Description: Config Server for Spring Cloud Applications
 Documentation url: http://docs.pivotal.io/spring-cloud-services/
-Dashboard: https://spring-cloud-service-broker.cfapps.io/dashboard/p-config-server/1658b211-4063-4883-8109-138640e0b7d5
+Dashboard: https://spring-cloud-broker.apps.ourpcf.com/dashboard/p-config-server/637c0d5f-b849-4983-bb86-2f88a1cf1216
 
 Last Operation
-Status: update in progress
-Message: 
-Started: 2017-04-09T00:27:45Z
-Updated: 2017-04-09T00:27:57Z
+Status: update succeeded
+Message:
+Started: 2017-09-06T04:18:27Z
+Updated: 2017-09-06T04:19:32Z
 
 ---------------------------------------------------------------------
 
