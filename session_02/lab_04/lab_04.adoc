@@ -249,7 +249,7 @@ Complete */src/main/resources/template/index.html* file:
 
 . Run the *clean* and *package* task of Maven, go to the command prompt and *cf push* the application. Refreshing the browser should show the dynamic value of greeting:
 +
-image::../../Common/images/scsapp-greeting-value.png[]
+image::../../Common/images/eclipse-scsapp-greeting-hello.png[]
 
 
 == Add Spring Config functionality
