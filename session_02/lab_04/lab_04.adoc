@@ -411,9 +411,14 @@ image::../../Common/images/eclipse-manifest-config-server-entry.png[]
 +
 [source, bash]
 -----
+
 :
-Binding service pdoshi-config-server to app pdoshi-scsapp in org PapaJohns / space workshop as pdoshi@pivotal.io...
+
+Done uploading
 OK
+Binding service pdoshi-config-server to app pdoshi-scsapp in org training / space training as parag...
+OK
+
 :
 -----
 
