@@ -128,7 +128,7 @@ image::../../Common/images/hystrix-instance-creation.png[]
 
 . After the service is created, if we view the Circuit Breaker Dashboard (accessible from the _manage_ link in Apps Manager) you will see that a dashboard has been deployed but is empty (You may get an _initializing_ message for a few seconds.  This should eventually refresh to a dashboard):
 +
-image::../../Common/images/circuit-breaker-instance-dashboard.png[]
+image::../../Common/images/hytrix-instance-dashboard.png[]
 
 . We will now bind our application to our circuit-breaker-dashboard within our Cloudfoundry deployment manifest.  Add the additional reference of circuit breaker dashboard to the services to the bottom of *manifest.yml* in the services list:
 +
