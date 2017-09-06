@@ -2,58 +2,33 @@
 
 In this lab we'll utilize Spring Boot and Spring Cloud to configure our application from a configuration dynamically retrieved from a git repository. We'll then deploy it to Pivotal Cloud Foundry and auto-provision an instance of a configuration server using Pivotal Spring Cloud Services.
 
-== Import Starter Project in Intellij
+== Import Starter Project in Eclipse
 
-in your git clone directory, there will be a sub-directory named 'starter-project/spring-config'. In that directory, there will be a zip archive file named 'SCSApp.zip'. Un-zip that file into any directory. After un-zipping that file, import it as a Maven project in Intellij by following these steps:
+in your git clone directory, there will be a sub-directory named 'starter-project/spring-config'. In that directory, there will be a zip archive file named 'SCSApp.zip'. Un-zip that file into any directory. After un-zipping that file, import it as a Maven project in Eclipse by following these steps:
 
-. Start Intellij and use the 'Import Project option':
+. Start Eclipse and use the File -> Import ->Maven ->Existing Maven Projects option:
 
 +
-image::../../Common/images/intellij-starter.png[]
+image::../../Common/images/eclipse-import-project.png[]
 
 . In the project selection step, navigate to your directory where you un-zipped the file and select 'SCSApp':
 
 +
-image::../../Common/images/intellij-project-selection.png[] 
+image::../../Common/images/eclipse-project-selection.png[] 
 
-. In the Import Project step, select 'Import Project from external model' and select Maven:
-
-+
-image::../../Common/images/intellij-import-maven-project.png[] 
-
-. In the Project Settings page, retain all the defaults and click Next:
+. Click Finish. The project should be imported without any errors. Make sure your Eclipse Java Compiler is set to greater than 1.5 :
 
 +
-image::../../Common/images/intellij-project-defaults.png[] 
+image::../../Common/images/eclipse-project-imported.png[] 
 
-. In the Select Maven Projects to Import step, select the com.example.scsapp:0.0.1-SNAPSHOT :
 
+. Click on menu option Run -> Run Configuration -> Maven option. Click on 'New Launch Configuration icon' and create a Maven launch configuration with *clean* and *package* goals. Select SCSApp project as the Base Directory. Click Finish and you should have a successful build. A new scsapp-0.0.1-SNAPSHOT.jar should be created in /target folder :
 +
-image::../../Common/images/intellij-maven-project-selected.png[] 
+image::../../Common/images/eclipse-build-successful.png[]
 
-. Select 1.8 JDK and click Next:
-
+. Open the manifest.yml file and change the app name to include your unique user name and remove the buildpack attribute:
 +
-image::../../Common/images/intellij-jdk-selection.png[] 
-
-. Enter project name 'scsapp', select your project file location and click Finish:
-
-+
-image::../../Common/images/intellij-project-name.png[]
-
-. The scsapp project should get loaded and take you to the project view. Click on 'Build' menu and select 'Build Project' to ensure there are no compilation errors:
-
-+
-image::../../Common/images/intellij-project-imported.png[]
-
-
-. Navigate to 'View - Tool Windows - Maven Projects' and run the *clean* and *package* command. This should generate the scsapp-0.0.1-SNAPSHOT.jar' in the *target* folder:
-+
-image::../../Common/images/intellij-jar-generation.png[]
-
-. Open the manifest.yml file and change the app name to include your unique user name:
-+
-image::../../Common/images/manifest-change-app-name.png[]
+image::../../Common/images/eclipse-manifest-uniquename.png[]
 
 
 == Push to CF
@@ -63,45 +38,70 @@ image::../../Common/images/manifest-change-app-name.png[]
 +
 -----
 pdoshi@Parags-MacBook-Pro:~/Downloads/starter-project/SCSApp$ cf push
-Using manifest file /Users/pdoshi/Downloads/starter-project/SCSApp/manifest.yml
+Using manifest file C:\Users\Administrator\PCF\PCF-SCS-Workshop-master\starter-project\spring-config\SCSApp\SCSApp\manif
+est.yml
 
 Using stack cflinuxfs2...
 OK
-Updating app pdoshi-scsapp in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Creating app pdoshi-scsapp in org training / space training as parag...
+OK
+
+Creating route pdoshi-scsapp.apps.ourpcf.com...
+OK
+
+Binding pdoshi-scsapp.apps.ourpcf.com to pdoshi-scsapp...
 OK
 
 Uploading pdoshi-scsapp...
-Uploading app files from: /var/folders/1w/mpbw8_5s2_j491wwnlcc7vv40000gn/T/unzipped-app874964493
-Uploading 347.3K, 96 files
-Done uploading               
+Uploading app files from: C:\Users\ADMINI~1\AppData\Local\Temp\2\unzipped-app704838243
+Uploading 829.6K, 98 files
+Done uploading
 OK
 
-Stopping app pdoshi-scsapp in org PapaJohns / space workshop as pdoshi@pivotal.io...
-OK
-
-Starting app pdoshi-scsapp in org PapaJohns / space workshop as pdoshi@pivotal.io...
-Downloading java_buildpack...
-Downloaded java_buildpack
+Starting app pdoshi-scsapp in org training / space training as parag...
+Downloading binary_buildpack...
+Downloading ruby_buildpack...
+Downloading nodejs_buildpack...
+Downloading python_buildpack...
+Downloading staticfile_buildpack...
+Downloaded binary_buildpack
+Downloading java_buildpack_offline...
+Downloaded nodejs_buildpack
+Downloading go_buildpack...
+Downloaded ruby_buildpack
+Downloading php_buildpack...
+Downloaded python_buildpack
+Downloading dotnet_core_buildpack...
+Downloaded staticfile_buildpack
+Downloaded go_buildpack
+Downloaded dotnet_core_buildpack
+Downloaded php_buildpack
+Downloaded java_buildpack_offline
 Creating container
 Successfully created container
-Downloading build artifacts cache...
 Downloading app package...
 Downloaded app package (18.6M)
------> Java Buildpack Version: v3.14 (offline) | https://github.com/cloudfoundry/java-buildpack.git#d5d58c6
------> Downloading Open Jdk JRE 1.8.0_121 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_121.tar.gz (found in cache)
-       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.5s)
------> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
-       Memory Settings: -Xms681574K -Xss349K -Xmx681574K -XX:MaxMetaspaceSize=104857K -XX:MetaspaceSize=104857K
------> Downloading Container Certificate Trust Store 2.0.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-certificate-trust-store/container-certificate-trust-store-2.0.0_RELEASE.jar (found in cache)
-       Adding certificates to .java-buildpack/container_certificate_trust_store/truststore.jks (0.8s)
------> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
+Staging...
+-----> Java Buildpack Version: v3.18 (offline) | https://github.com/cloudfoundry/java-buildpack.git#841ecb2
+-----> Downloading Open Jdk JRE 1.8.0_131 from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8
+.0_131.tar.gz (found in cache)
+       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.0s)
+-----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-cal
+culator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
+       Memory Settings: -Xmx681574K -XX:MaxMetaspaceSize=104857K -Xss349K -Xms681574K -XX:MetaspaceSize=104857K
+-----> Downloading Container Security Provider 1.5.0_RELEASE from https://java-buildpack.cloudfoundry.org/container-secu
+rity-provider/container-security-provider-1.5.0_RELEASE.jar (found in cache)
+-----> Downloading Spring Auto Reconfiguration 1.11.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfig
+uration/auto-reconfiguration-1.11.0_RELEASE.jar (found in cache)
 Exit status 0
+Staging complete
 Uploading droplet, build artifacts cache...
 Uploading build artifacts cache...
 Uploading droplet...
-Uploaded build artifacts cache (109B)
-Uploaded droplet (64M)
+Uploaded build artifacts cache (132B)
+Uploaded droplet (64.1M)
 Uploading complete
+Stopping instance 838f292a-69e3-44ec-8a97-8776c69044d5
 Destroying container
 Successfully destroyed container
 
@@ -113,21 +113,29 @@ App started
 
 OK
 
-App pdoshi-scsapp was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Djavax.net.ssl.trustStore=$PWD/.java-buildpack/container_certificate_trust_store/truststore.jks -Djavax.net.ssl.trustStorePassword=java-buildpack-trust-store-password" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
+App pdoshi-scsapp was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpa
+ck-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:
+15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS="-Djava.io
+.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Djava.ext.d
+irs=$PWD/.java-buildpack/container_security_provider:$PWD/.java-buildpack/open_jdk_jre/lib/ext -Djava.security.propertie
+s=$PWD/.java-buildpack/security_providers/java.security" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jr
+e/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
 
-Showing health and status for app pdoshi-scsapp in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Showing health and status for app pdoshi-scsapp in org training / space training as parag...
 OK
 
 requested state: started
 instances: 1/1
 usage: 1G x 1 instances
-urls: pdoshi-scsapp.cfapps.io
-last uploaded: Sat Apr 8 18:41:22 UTC 2017
+urls: pdoshi-scsapp.apps.ourpcf.com
+last uploaded: Wed Sep 6 03:28:22 UTC 2017
 stack: cflinuxfs2
-buildpack: java_buildpack
+buildpack: container-security-provider=1.5.0_RELEASE java-buildpack=v3.18-offline-https://github.com/cloudfoundry/java-b
+uildpack.git#841ecb2 java-main open-jdk-like-jre=1.8.0_131 open-jdk-like-memory-calculator=2.0.2_RELEASE open-jdk-like-s
+ecurity-providers secur...
 
      state     since                    cpu    memory         disk           details
-#0   running   2017-04-08 02:42:25 PM   0.0%   378.9M of 1G   142.8M of 1G
+#0   running   2017-09-06 03:28:54 AM   0.0%   203.2M of 1G   144.3M of 1G
 
 -----
 
