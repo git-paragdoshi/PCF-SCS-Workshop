@@ -474,13 +474,9 @@ OK
 ---------------------------------------------------------------------
 
 . Test your application by navigating to the /services URL of the application, which will invoke the UI. In my example, the URL will be https://pdoshi-scsapp.apps.ourpcf.com/services. You should now see a section to add Attendees and the list of Attendee getting refreshed everytime we add an attendee:
-+
-image::../../Common/images/services-endpoint-page.png[]
-
-. After couple of attendees are created:
 
 +
-image::../../Common/images/services-endpoint-page-with-data.png[]
+image::../../Common/images/eureka-services-endpoint-page-with-data.png[]
 
 . From a commandline stop the attendee-service microservice
 +
@@ -491,7 +487,7 @@ $ cf stop pdoshi-attendee-service
 . Refresh the browser.  What happens?  Now you get a nasty error that is not very user friendly!
 
 +
-image::../../Common/images/services-error-page.png[]
+image::../../Common/images/eureka-services-error-page.png[]
 
 . Next we'll learn how to make our UI Application more resilient in the case that our downstream services are unavailable.
 
