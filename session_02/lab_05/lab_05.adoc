@@ -107,21 +107,21 @@ image::../../Common/images/eureka-appmanager-service-registry.png[]
 . There is only one plan available. Click on 'Select this plan' button and give it the same unique name that you mentioned in the manifest.yml file. In my example, it is pdoshi-service-registry. Add it to the 'training' space. And do not bind any application at this time. It will take a few minutes for the instance to be created. After the instance is created, it will look similar to the image below:
 
 + 
-image::../../Common/images/appmanager-service-registry-created.png[] 
+image::../../Common/images/eureka-app-manager-service-registry-created.png[] 
 
 .  Go to the command prompt and issue a *cf services* command and you should see your newly created MySQL and Service Registry service created and available.
 +
 [source, bash]
 -----
 pdoshi@Parags-MacBook-Pro:~/demos/AttendeeServicesApp$ cf services
-Getting services in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Getting services in org training / space training as parag...
 OK
 
-name                      service              plan       bound apps           last operation
-autoscale                 app-autoscaler       standard   ddieruf-articulate   create succeeded
-pdoshi-config-server      p-config-server      standard   pdoshi-scsapp        update succeeded
-pdoshi-mysql-service      p-mysql              100mb                           create succeeded
-pdoshi-service-registry   p-service-registry   standard                        create succeeded
+name                      service              plan       bound apps              last operation
+my-autoscaler             app-autoscaler       standard   paragdoshi-articulate   create succeeded
+pdoshi-config-server      p-config-server      standard   pdoshi-scsapp           update succeeded
+pdoshi-mysql-service      p-mysql              100mb                              create succeeded
+pdoshi-service-registry   p-service-registry   standard                           create succeeded
 -----
 
 . Navigate to your AttendeeServiceApp folder and do a *cf push*. You should see the 'Binding...' service message. 
@@ -130,33 +130,33 @@ pdoshi-service-registry   p-service-registry   standard                        c
 -----
 :
 OK
-Binding service pdoshi-mysql-service to app pdoshi-attendee-service in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Binding service pdoshi-mysql-service to app pdoshi-attendee-service in org training / space training as parag...
 OK
-Binding service pdoshi-service-registry to app pdoshi-attendee-service in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Binding service pdoshi-service-registry to app pdoshi-attendee-service in org training / space training as parag...
 OK
 :
 
 -----
 
-. Ensure that your application has successfully started. Open a browser window and visit your application URL. In my example, it is pdoshi-attendee-service.cfapps.io. You need to have JSON formatter enabled as the app will show the /attendees endpoint information.
+. Ensure that your application has successfully started. Open a browser window and visit your application URL. In my example, it is pdoshi-attendee-service.apps.ourpcf.com. You need to have JSON formatter enabled as the app will show the /attendees endpoint information.
 
 +
-image::../../Common/images/attendee-service-browser-endpoint.png[] 
+image::../../Common/images/eureka-attendee-service-browser-endpoint.png[] 
 
 . Now navigate to App Manager Services tab and you will see one app bound to your Eureka Service Registry and MySQL service.  
 
 +
-image::../../Common/images/appmanager-services-view.png[] 
+image::../../Common/images/eureka-appmanager-services-view.png[] 
 
 . Click on your Service Registry service instance and it will show the attendee-service bound to the registry. 
 
 +
-image::../../Common/images/appmanager-service-registry-bound.png[]
+image::../../Common/images/eureka-appmanager-service-registry-bound.png[]
 
 . Click on the 'Manage' link and it will open the Eureka Service Registry dashboard. You can see details of the service instance that is bound to the service registry.
 
 +
-image::../../Common/images/appmanager-service-registry-dashboard.png[]
+image::../../Common/images/eureka-appmanager-service-registry-dashboard.png[]
 
 
 == Lookup Attendee Service and Invoke its Services
@@ -381,10 +381,12 @@ public class ServicesController {
 	public String services(HttpServletRequest request, Model model) throws Exception {
 		Collection<Attendee> collection = new ArrayList<>();
 		Resources<Attendee> results = client.getAttendees();
-		if(results != null) {
-			results.forEach(collection::add);
+		
+		for (Attendee attendee : results)
+		{
+		    collection.add(attendee);
 		}
-
+		
 		model.addAttribute("attendees", collection);
 		model = clearAttendeeFormData(model);
 		return "services";
@@ -456,7 +458,7 @@ applications:
   stack: cflinuxfs2
   timeout: 180
   services:
-    - pdoshi-service-registry
+  - pdoshi-service-registry
 -----
 
 
@@ -467,11 +469,11 @@ applications:
 [source,bash]
 ---------------------------------------------------------------------
 OK
-Binding service pdoshi-service-registry to app pdoshi-scsapp in org PapaJohns / space workshop as pdoshi@pivotal.io...
+Binding service pdoshi-service-registry to app pdoshi-scsapp in org training / space training as parag...
 OK
 ---------------------------------------------------------------------
 
-. Test your application by navigating to the /services URL of the application, which will invoke the UI. In my example, the URL will be https://pdoshi-scsapp.cfapps.io/services. You should now see a section to add Attendees and the list of Attendee getting refreshed everytime we add an attendee:
+. Test your application by navigating to the /services URL of the application, which will invoke the UI. In my example, the URL will be https://pdoshi-scsapp.apps.ourpcf.com/services. You should now see a section to add Attendees and the list of Attendee getting refreshed everytime we add an attendee:
 +
 image::../../Common/images/services-endpoint-page.png[]
 
