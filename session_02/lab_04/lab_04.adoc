@@ -194,7 +194,7 @@ public class ServicesController {
 }
 -----
 
-. Override the default value of "Hi" in the applications.properties by adding this line:
+. Override the default value of "Hi" in the */src/main/resources/applications.properties* by adding this line:
 
 +
 [source, properties]
