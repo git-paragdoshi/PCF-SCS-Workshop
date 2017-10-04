@@ -2,8 +2,7 @@
 Java workshop with Pivotal Cloud Foundry and Spring Cloud Services (SCS)
 
 
-## Instructors
-- Ralph Meira, Sr. Platform Architect, rmeira@pivotal.io
+## Instructor
 - Parag Doshi, Sr. Platform Architect, pdoshi@pivotal.io
 
 ## Agenda
